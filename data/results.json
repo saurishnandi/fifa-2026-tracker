@@ -619,8 +619,8 @@
       "date": "2026-06-25",
       "group": "E",
       "team1": "Curaçao",
-      "score1": null,
-      "score2": null,
+      "score1": 0,
+      "score2": 2,
       "team2": "Côte d'Ivoire",
       "venue": "Philadelphia Stadium"
     },
@@ -629,8 +629,8 @@
       "date": "2026-06-25",
       "group": "E",
       "team1": "Ecuador",
-      "score1": null,
-      "score2": null,
+      "score1": 2,
+      "score2": 1,
       "team2": "Germany",
       "venue": "New York New Jersey Stadium"
     },
