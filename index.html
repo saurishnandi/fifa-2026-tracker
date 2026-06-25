@@ -297,13 +297,52 @@ function dateKeysToToday() {
   const start = new Date('2026-06-11T00:00:00Z'); const endMax = new Date('2026-07-19T00:00:00Z'); const now = new Date(); const end = now < start ? start : (now > endMax ? endMax : now);
   const keys = []; for (let d = new Date(start); d <= end; d.setUTCDate(d.getUTCDate()+1)) keys.push(d.toISOString().slice(0,10).replace(/-/g,'')); return keys;
 }
+  function scoreForDisplayOrder(team1, team2, ev) {
+  if (canon(team1) === canon(ev.team1) && canon(team2) === canon(ev.team2)) {
+    return { s1: ev.s1, s2: ev.s2 };
+  }
+
+  if (canon(team1) === canon(ev.team2) && canon(team2) === canon(ev.team1)) {
+    return { s1: ev.s2, s2: ev.s1 };
+  }
+
+  return null;
+}
 function applyEvents(events) {
   for (const ev of events) {
-    for (const fx of DATA.fixtures) { if (fx.date.replace(/-/g,'') === ev.date && samePair(fx.team1, fx.team2, ev.team1, ev.team2)) { state.liveGroup[fx.id] = {s1: ev.s1, s2: ev.s2}; } }
+    for (const fx of DATA.fixtures) {
+      if (
+        fx.date.replace(/-/g, '') === ev.date &&
+        samePair(fx.team1, fx.team2, ev.team1, ev.team2)
+      ) {
+        const correctedScore = scoreForDisplayOrder(fx.team1, fx.team2, ev);
+
+        if (correctedScore) {
+          state.liveGroup[fx.id] = correctedScore;
+        }
+      }
+    }
   }
+
   const model = computeModel();
+
   for (const ev of events) {
-    for (const [id,m] of Object.entries(model.matches)) { if (m.date.replace(/-/g,'') === ev.date && samePair(m.team1, m.team2, ev.team1, ev.team2)) { state.liveKnockout[id] = {s1: ev.s1, s2: ev.s2}; } }
+    for (const [id, m] of Object.entries(model.matches)) {
+      if (!m.team1 || !m.team2 || m.team1 === 'TBD' || m.team2 === 'TBD') {
+        continue;
+      }
+
+      if (
+        m.date.replace(/-/g, '') === ev.date &&
+        samePair(m.team1, m.team2, ev.team1, ev.team2)
+      ) {
+        const correctedScore = scoreForDisplayOrder(m.team1, m.team2, ev);
+
+        if (correctedScore) {
+          state.liveKnockout[id] = correctedScore;
+        }
+      }
+    }
   }
 }
 async function refreshLive() {
