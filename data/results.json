@@ -689,8 +689,8 @@
       "date": "2026-06-26",
       "group": "I",
       "team1": "Senegal",
-      "score1": null,
-      "score2": null,
+      "score1": 5,
+      "score2": 0,
       "team2": "Iraq",
       "venue": "Toronto Stadium"
     },
