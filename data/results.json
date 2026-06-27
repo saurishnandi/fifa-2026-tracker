@@ -739,8 +739,8 @@
       "date": "2026-06-27",
       "group": "L",
       "team1": "Panama",
-      "score1": null,
-      "score2": null,
+      "score1": 0,
+      "score2": 2,
       "team2": "England",
       "venue": "New York New Jersey Stadium"
     },
@@ -749,8 +749,8 @@
       "date": "2026-06-27",
       "group": "L",
       "team1": "Croatia",
-      "score1": null,
-      "score2": null,
+      "score1": 2,
+      "score2": 1,
       "team2": "Ghana",
       "venue": "Philadelphia Stadium"
     },
