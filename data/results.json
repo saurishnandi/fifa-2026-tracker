@@ -699,8 +699,8 @@
       "date": "2026-06-26",
       "group": "H",
       "team1": "Cabo Verde",
-      "score1": null,
-      "score2": null,
+      "score1": 0,
+      "score2": 0,
       "team2": "Saudi Arabia",
       "venue": "Houston Stadium"
     },
@@ -709,8 +709,8 @@
       "date": "2026-06-26",
       "group": "H",
       "team1": "Uruguay",
-      "score1": null,
-      "score2": null,
+      "score1": 0,
+      "score2": 1,
       "team2": "Spain",
       "venue": "Estadio Guadalajara"
     },
@@ -719,8 +719,8 @@
       "date": "2026-06-26",
       "group": "G",
       "team1": "New Zealand",
-      "score1": null,
-      "score2": null,
+      "score1": 1,
+      "score2": 5,
       "team2": "Belgium",
       "venue": "BC Place Vancouver"
     },
@@ -729,8 +729,8 @@
       "date": "2026-06-26",
       "group": "G",
       "team1": "Egypt",
-      "score1": null,
-      "score2": null,
+      "score1": 1,
+      "score2": 1,
       "team2": "IR Iran",
       "venue": "Seattle Stadium"
     },
