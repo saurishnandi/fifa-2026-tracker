@@ -759,8 +759,8 @@
       "date": "2026-06-27",
       "group": "K",
       "team1": "Colombia",
-      "score1": null,
-      "score2": null,
+      "score1": 0,
+      "score2": 0,
       "team2": "Portugal",
       "venue": "Miami Stadium"
     },
@@ -769,8 +769,8 @@
       "date": "2026-06-27",
       "group": "K",
       "team1": "Congo DR",
-      "score1": null,
-      "score2": null,
+      "score1": 3,
+      "score2": 1,
       "team2": "Uzbekistan",
       "venue": "Atlanta Stadium"
     },
